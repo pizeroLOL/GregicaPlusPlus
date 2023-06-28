@@ -1,3 +1,4 @@
+name: Dev build
 on:
   push:
     branches:
@@ -16,11 +17,13 @@ jobs:
       uses: actions/setup-java@v1.4.4
       with: 
         java-version: 8
+        cache: 'gradle'
+        distribution: 'temurin'
     - name: 获取github仓库下文件
       uses: actions/checkout@v3.5.3
     - name: 构建
       run: |
-        sh ./gradlew build -Dfile.encoding=UTF-8 --info
+        sh ./gradlew build -Dfile.encoding=UTF-8 --info --no-daemon
     - name: 上传构建
       uses: actions/upload-artifact@v3.1.2
       with:
