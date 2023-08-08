@@ -24,8 +24,9 @@ jobs:
            cache: 'gradle'
            distribution: 'temurin'
       - name: build
-        run: |
-          ./gradlew build -Dfile.encoding=UTF-8 --info --no-daemon
+        uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
+        with:
+          arguments: build
       - name: upload
         uses: actions/upload-artifact@v3.1.2
         with:
