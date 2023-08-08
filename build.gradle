@@ -92,6 +92,7 @@ repositories {
         }
     }
     maven { url = 'https://maven.su5ed.dev/releases' }
+    maven { url = 'https://pizerolol.github.io/LegacyDev/' }
 }
 
 dependencies {
