@@ -6,6 +6,7 @@ on:
       - dev
       - test*
       - feature*
+      - fix*
   pull_request:
     branches:
       - master
